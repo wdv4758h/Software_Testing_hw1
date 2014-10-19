@@ -14,7 +14,7 @@ def triangle(a, b, c):
 
     edge = sorted([a, b, c])
 
-    if edge[2] > edge[0] + edge[1]:
+    if edge[2] >= edge[0] + edge[1]:
         return 'Not a triangle'
 
     count = (a == b) + (a == c) + (b == c)
