@@ -22,6 +22,23 @@ class TestHw1(unittest.TestCase):
                  ((5, -1, -1), 'Value of b,c is not in the range of permitted values'),
                  ((-1, 5, -1), 'Value of a,c is not in the range of permitted values'),
                  ((-1, -1, -1),'Value of a,b,c is not in the range of permitted values'),
+
+                 # boundary
+                 ((100, 100, 1),   'Isosceles'),
+                 ((100, 100, 2),   'Isosceles'),
+                 ((100, 100, 100), 'Equilateral'),
+                 ((100, 100, 199), 'Isosceles'),
+                 ((100, 100, 200), 'Not a triangle'),
+                 ((100, 1, 100),   'Isosceles'),
+                 ((100, 2, 100),   'Isosceles'),
+                 ((100, 100, 100), 'Equilateral'),
+                 ((100, 199, 100), 'Isosceles'),
+                 ((100, 200, 100), 'Not a triangle'),
+                 ((1, 100, 100),   'Isosceles'),
+                 ((2, 100, 100),   'Isosceles'),
+                 ((100, 100, 100), 'Equilateral'),
+                 ((199, 100, 100), 'Isosceles'),
+                 ((200, 100, 100), 'Not a triangle'),
         ]
 
         for value, result in cases:
