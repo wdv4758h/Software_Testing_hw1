@@ -27,4 +27,16 @@ def triangle(a, b, c):
         return 'Scalene'
 
 def next_date(month, day, year):
+    error = []
+
+    if month > 12 or month < 1:
+        error.append('month not in 1 ... 12')
+    if day > 31 or day < 1:
+        error.append('day not in 1 ... 31')
+    if year > 2012 or year < 1812:
+        error.append('year not in 1812 ... 2012')
+
+    if error:
+        return '\n'.join(error)
+
     return '{}/{}/{}'.format(month, day+1, year)
