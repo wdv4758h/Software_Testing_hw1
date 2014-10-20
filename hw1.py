@@ -50,3 +50,19 @@ def next_date(month, day, year):
         year += 1
 
     return '{}/{}/{}'.format(month, day, year)
+
+def commision(locks, stocks, barrels):
+    total = 45 * locks + 30 * stocks + 25 * barrels
+
+    com = 0.1 * min(1000, total)
+
+    if total > 1000:
+        com += 0.15 * min(800, total - 1000)
+
+    if total > 1800:
+        com += 0.2 * (total - 1800)
+
+    if com.is_integer():
+        com = int(com)
+
+    return '${}'.format(com)
