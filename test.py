@@ -122,5 +122,31 @@ class TestHw1(unittest.TestCase):
             self.assertEqual(fresult, result,
                     self.error_msg.format(repr(value), result, fresult))
 
+    def test_commision(self):
+        cases = [
+                 # equivalence class
+                 ((10, 10, 10), '$100'),
+                 ((-1, 40, 45), 'Program terminates'),
+                 ((-2, 40, 45), 'locks not in 1 ... 70'),
+                 ((71, 40, 45), 'locks not in 1 ... 70'),
+                 ((35, -1, 45), 'stocks not in 1 ... 80'),
+                 ((35, 81, 45), 'stocks not in 1 ... 80'),
+                 ((35, 40, -1), 'barrels not in 1 ... 90'),
+                 ((35, 40, 91), 'barrels not in 1 ... 90'),
+                 ((-2, 40, 45), 'locks not in 1 ... 70'),
+                 ((35, -1, 45), 'stocks not in 1 ... 80'),
+                 ((35, 40, -2), 'barrels not in 1 ... 90'),
+                 ((-2, -1, 45), 'locks not in 1 ... 70'),
+                 ((-2, -1, 45), 'locks not in 1 ... 70\nstocks not in 1 ... 80'),
+                 ((-2, 40, -1), 'locks not in 1 ... 70\nstocks not in 1 ... 90'),
+                 ((35, -1, -1), 'locks not in 1 ... 80\nstocks not in 1 ... 90'),
+                 ((-2, -1, -1), 'locks not in 1 ... 70\nlocks not in 1 ... 80\nstocks not in 1 ... 90'),
+        ]
+
+        for value, result in cases:
+            fresult = hw1.commision(*value)
+            self.assertEqual(fresult, result,
+                    self.error_msg.format(repr(value), result, fresult))
+
 if __name__ == '__main__':
     unittest.main()
