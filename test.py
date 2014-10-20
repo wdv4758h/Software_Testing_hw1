@@ -2,6 +2,9 @@ import unittest
 import hw1
 
 class TestHw1(unittest.TestCase):
+
+    error_msg = '[parameter] {} [correct] {} [fail] {}'
+
     def test_triangle(self):
         cases = [
                  # equivalence class
@@ -69,7 +72,7 @@ class TestHw1(unittest.TestCase):
         for value, result in cases:
             fresult = hw1.triangle(*value)
             self.assertEqual(fresult, result,
-                    '[parameter] {} [correct] {} [fail] {}'.format(repr(value), result, fresult))
+                    self.error_msg.format(repr(value), result, fresult))
 
 if __name__ == '__main__':
     unittest.main()
