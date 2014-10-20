@@ -62,7 +62,7 @@ def commision(locks, stocks, barrels):
         error.append('locks not in 1 ... 70')
     if stocks < 0 or stocks > 80:
         error.append('stocks not in 1 ... 80')
-    if barrels < 0 or barrels > 80:
+    if barrels < 0 or barrels > 90:
         error.append('barrels not in 1 ... 90')
 
     if error:
