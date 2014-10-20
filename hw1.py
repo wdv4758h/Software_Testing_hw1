@@ -52,6 +52,22 @@ def next_date(month, day, year):
     return '{}/{}/{}'.format(month, day, year)
 
 def commision(locks, stocks, barrels):
+
+    if locks == -1:
+        return 'Program terminates'
+
+    error = []
+
+    if locks < 0 or locks > 70:
+        error.append('locks not in 1 ... 70')
+    if stocks < 0 or stocks > 80:
+        error.append('stocks not in 1 ... 80')
+    if barrels < 0 or barrels > 80:
+        error.append('barrels not in 1 ... 90')
+
+    if error:
+        return '\n'.join(error)
+
     total = 45 * locks + 30 * stocks + 25 * barrels
 
     com = 0.1 * min(1000, total)
