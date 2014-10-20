@@ -67,7 +67,9 @@ class TestHw1(unittest.TestCase):
         ]
 
         for value, result in cases:
-            self.assertEqual(hw1.triangle(*value), result)
+            fresult = hw1.triangle(*value)
+            self.assertEqual(fresult, result,
+                    '[parameter] {} [correct] {} [fail] {}'.format(repr(value), result, fresult))
 
 if __name__ == '__main__':
     unittest.main()
