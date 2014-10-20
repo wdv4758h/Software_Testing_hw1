@@ -39,4 +39,14 @@ def next_date(month, day, year):
     if error:
         return '\n'.join(error)
 
-    return '{}/{}/{}'.format(month, day+1, year)
+    day += 1
+
+    if day > 31:
+        day = 1
+        month += 1
+
+    if month > 12:
+        month = 1
+        year += 1
+
+    return '{}/{}/{}'.format(month, day, year)
