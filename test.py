@@ -74,5 +74,29 @@ class TestHw1(unittest.TestCase):
             self.assertEqual(fresult, result,
                     self.error_msg.format(repr(value), result, fresult))
 
+    def test_next_date(self):
+        cases = [
+                 # equivalence class
+                 ((6, 15, 1912),   '6/16/1912'),
+                 ((-1, 15, 1912),  'month not in 1 ... 12'),
+                 ((13, 15, 1912),  'month not in 1 ... 12'),
+                 ((6, -1, 1912),   'day not in 1 ... 31'),
+                 ((6, 32, 1912),   'day not in 1 ... 31'),
+                 ((6, 15, 1811),   'year not in 1812 ... 2012'),
+                 ((6, 15, 2013),   'year not in 1812 ... 2012'),
+                 ((-1, 15, 1912),  'month not in 1 ... 12'),
+                 ((6, -1, 1912),   'day not in 1 ... 31'),
+                 ((6, 15, 1811),   'year not in 1812 ... 2012'),
+                 ((-1, -1, 1912),  'month not in 1 ... 12\nyear not in 1812 ... 2012'),
+                 ((6, -1, 1811),   'month not in 1 ... 12\nyear not in 1812 ... 2012'),
+                 ((-1, 15, 1811),  'month not in 1 ... 12\nyear not in 1812 ... 2012'),
+                 ((-1, -1, 1811),  'month not in 1 ... 12\nday not in 1 ... 31\nyear not in 1812 ... 2012'),
+        ]
+
+        for value, result in cases:
+            fresult = hw1.next_date(*value)
+            self.assertEqual(fresult, result,
+                    self.error_msg.format(repr(value), result, fresult))
+
 if __name__ == '__main__':
     unittest.main()
