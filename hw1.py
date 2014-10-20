@@ -25,3 +25,6 @@ def triangle(a, b, c):
         return 'Isosceles'
     else:
         return 'Scalene'
+
+def next_date(month, day, year):
+    return '{}/{}/{}'.format(month, day+1, year)
