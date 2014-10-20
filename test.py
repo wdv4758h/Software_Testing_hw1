@@ -136,11 +136,10 @@ class TestHw1(unittest.TestCase):
                  ((-2, 40, 45), 'locks not in 1 ... 70'),
                  ((35, -1, 45), 'stocks not in 1 ... 80'),
                  ((35, 40, -2), 'barrels not in 1 ... 90'),
-                 ((-2, -1, 45), 'locks not in 1 ... 70'),
                  ((-2, -1, 45), 'locks not in 1 ... 70\nstocks not in 1 ... 80'),
-                 ((-2, 40, -1), 'locks not in 1 ... 70\nstocks not in 1 ... 90'),
-                 ((35, -1, -1), 'locks not in 1 ... 80\nstocks not in 1 ... 90'),
-                 ((-2, -1, -1), 'locks not in 1 ... 70\nlocks not in 1 ... 80\nstocks not in 1 ... 90'),
+                 ((-2, 40, -1), 'locks not in 1 ... 70\nbarrels not in 1 ... 90'),
+                 ((35, -1, -1), 'stocks not in 1 ... 80\nbarrels not in 1 ... 90'),
+                 ((-2, -1, -1), 'locks not in 1 ... 70\nstocks not in 1 ... 80\nbarrels not in 1 ... 90'),
         ]
 
         for value, result in cases:
