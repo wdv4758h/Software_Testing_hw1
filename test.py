@@ -87,8 +87,8 @@ class TestHw1(unittest.TestCase):
                  ((-1, 15, 1912),  'month not in 1 ... 12'),
                  ((6, -1, 1912),   'day not in 1 ... 31'),
                  ((6, 15, 1811),   'year not in 1812 ... 2012'),
-                 ((-1, -1, 1912),  'month not in 1 ... 12\nyear not in 1812 ... 2012'),
-                 ((6, -1, 1811),   'month not in 1 ... 12\nyear not in 1812 ... 2012'),
+                 ((-1, -1, 1912),  'month not in 1 ... 12\nday not in 1 ... 31'),
+                 ((6, -1, 1811),   'day not in 1 ... 31\nyear not in 1812 ... 2012'),
                  ((-1, 15, 1811),  'month not in 1 ... 12\nyear not in 1812 ... 2012'),
                  ((-1, -1, 1811),  'month not in 1 ... 12\nday not in 1 ... 31\nyear not in 1812 ... 2012'),
 
