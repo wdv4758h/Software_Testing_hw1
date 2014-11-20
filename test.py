@@ -77,7 +77,8 @@ class TestHw1(unittest.TestCase):
     def test_next_date(self):
         cases = [
                  # equivalence class
-                 ((6, 15, 1912),   '6/16/1912'),
+                 ((12, 31, 1912),  '1/1/1913'),
+                 ((7, 31, 1912),   '8/1/1912'),
                  ((-1, 15, 1912),  'month not in 1 ... 12'),
                  ((13, 15, 1912),  'month not in 1 ... 12'),
                  ((6, -1, 1912),   'day not in 1 ... 31'),
